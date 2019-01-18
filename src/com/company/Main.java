@@ -25,7 +25,7 @@ public class Main {
 	        if (usrInput == 1){
 	        	System.out.println(accountBalance);
 			}else if (usrInput == 2){
-	        	System.out.println("What is the amount you'd like to withdraw? $x.xx");
+	        	System.out.println("What is the amount you'd like to withdraw? Example - x.xx");
 	        	withdrawAmt = input.nextDouble(); //prompts for withdraw amount
 
 				//checks if enough funds are available in account balance
@@ -37,12 +37,22 @@ public class Main {
 				}
 
 			}else if (usrInput == 3){
-	        	System.out.println("How much would you like to deposit? - $x.xx");
+	        	System.out.println("How much would you like to deposit? - Example x.xx");
 	        	depositAmt = input.nextDouble(); //prompts for deposit amount
 	        	accountBalance += depositAmt; //adds deposit amount to account balance
 	        	System.out.println("You have deposited: $" + depositAmt + " your new account balance is: $" + accountBalance);
 			} else{
 				System.out.println("Error - Incorrect input.");
+			}
+
+	        System.out.println("Would you like to complete another transaction? - Yes or No");
+	        String usrAnswer = input.next();
+
+	        if (usrAnswer.equals("Yes")){
+	        	cont = true;
+			} else if (usrAnswer.equals("No")){
+	        	System.out.println("Goodbye.");
+	        	cont = false;
 			}
 
         }while(cont);
